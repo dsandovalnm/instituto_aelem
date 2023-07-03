@@ -1,0 +1,190 @@
+
+            sectionNumber++;
+
+            let tlTeachersBtn = new TimelineMax({paused: true});
+            tlTeachersBtn.from(".awards .content__description", 0.3, {
+                autoAlpha: 0,
+                left: -600,
+                ease: Power1.easeOut
+            });
+            tlTeachersBtn.from(".awards .content__btn-block > *", 0.3, {scale: 0, ease: Back.easeOut});
+
+            let tlTitle6 = gsap.timeline({paused: true});
+            tlTitle6.fromTo(titles[sectionNumber], {y: "100%"},{y: "0", duration: 0.2,});
+            tlTitle6.fromTo(titles[sectionNumber - 1], {y: "0"}, {y: "-100%", duration: 0.2,}, 0);
+
+            let tl6 = gsap.timeline();
+
+            let st6 = ScrollTrigger.create({
+                trigger: "body",
+                scrub:parseInt(scrubPower)/100,
+                start: "0 -" + (scrollDurationHome * (sectionNumber - 1) + projectBlocksScroll + newsBlocksScroll + addBlocksScroll*2.5),
+                end: "+=" + (scrollDurationHome),
+                onUpdate: ({progress, direction, isActive}) => {
+                    if (progress >= 0.9) {
+                        tlTeachersBtn.play();
+                    } else {
+                        tlTeachersBtn.reverse();
+                    }
+                },
+                onToggle: ({progress, direction, isActive}) => {
+                    if (!isActive && direction > 0) {
+                        if (!skipMode) tlTitle6.play();
+                        $('.header__menu li').removeClass('active');
+                        $('.header__menu li').eq(5).addClass('active');
+                    } else if (isActive && direction < 0) {
+                        if (!skipMode) tlTitle6.reverse();
+                        $('.header__menu li').removeClass('active');
+                        $('.header__menu li').eq(4).addClass('active');
+                    }
+                },
+                animation: tl6
+            });
+            
+            let titlesTeachers = gsap.utils.toArray(".awards .content__title > *");
+            titlesTeachers.forEach((title, index) => {
+                if (index % 2 === 0) {
+                    tl6.from(title, {autoAlpha: 0, right: -600 - 100 * index, ease: Power1.easeOut}, 0);
+                } else {
+                    tl6.from(title, {autoAlpha: 0, left: -600 - 100 * index, ease: Power1.easeOut}, 0);
+                }
+            });
+
+            let tl61 = gsap.timeline();
+            let st61 = ScrollTrigger.create({
+                trigger: "body",
+                scrub:parseInt(scrubPower)/100,
+                start: "0 -" + (scrollDurationHome + projectBlocksScroll + scrollDurationHome / 2 + addBlocksScroll*2),
+                end: "+=" + (scrollDurationHome / 2),
+                animation: tl61
+            });
+            tl61.from('.teachers .content__subtitle', {autoAlpha: 0, top: -200, ease: Power1.easeOut}, 0);
+            let awardsTeachers = gsap.utils.toArray(".awards__list .content__award");
+            awardsTeachers.forEach((award, index) => {
+                tl61.from(award, {autoAlpha: 0, bottom: -800 - 300 * index, ease: Power1.easeOut}, 0);
+            });
+            //teachers end
+
+            sectionNumber++;
+
+            let tlAvardsBtn = new TimelineMax({paused: true});
+            tlAvardsBtn.from(".awards .content__description", 0.3, {
+                autoAlpha: 0,
+                left: -600,
+                ease: Power1.easeOut
+            });
+            tlAvardsBtn.from(".awards .content__btn-block > *", 0.3, {scale: 0, ease: Back.easeOut});
+
+            let tlTitle7 = gsap.timeline({paused: true});
+            tlTitle7.fromTo(titles[sectionNumber], {y: "100%"},{y: "0", duration: 0.2,});
+            tlTitle7.fromTo(titles[sectionNumber - 1], {y: "0"}, {y: "-100%", duration: 0.2,}, 0);
+
+            let tl7 = gsap.timeline();
+
+            let st7 = ScrollTrigger.create({
+                trigger: "body",
+                scrub:parseInt(scrubPower)/100,
+                start: "0 -" + (scrollDurationHome * (sectionNumber - 1) + projectBlocksScroll + newsBlocksScroll + addBlocksScroll*2.5),
+                end: "+=" + (scrollDurationHome),
+                onUpdate: ({progress, direction, isActive}) => {
+                    if (progress >= 0.9) {
+                        tlAvardsBtn.play();
+                    } else {
+                        tlAvardsBtn.reverse();
+                    }
+                },
+                onToggle: ({progress, direction, isActive}) => {
+                    if (!isActive && direction > 0) {
+                        if (!skipMode) tlTitle7.play();
+                        $('.header__menu li').removeClass('active');
+                        $('.header__menu li').eq(6).addClass('active');
+                    } else if (isActive && direction < 0) {
+                        if (!skipMode) tlTitle7.reverse();
+                        $('.header__menu li').removeClass('active');
+                        $('.header__menu li').eq(5).addClass('active');
+                    }
+                },
+                animation: tl7
+            });
+            
+            let titlesAwards = gsap.utils.toArray(".awards .content__title > *");
+            titlesAwards.forEach((title, index) => {
+                if (index % 2 === 0) {
+                    tl7.from(title, {autoAlpha: 0, right: -600 - 100 * index, ease: Power1.easeOut}, 0);
+                } else {
+                    tl7.from(title, {autoAlpha: 0, left: -600 - 100 * index, ease: Power1.easeOut}, 0);
+                }
+            });
+
+            let tl71 = gsap.timeline();
+            let st71 = ScrollTrigger.create({
+                trigger: "body",
+                scrub:parseInt(scrubPower)/100,
+                start: "0 -" + (scrollDurationHome + projectBlocksScroll + scrollDurationHome / 2 + addBlocksScroll*2),
+                end: "+=" + (scrollDurationHome / 2),
+                animation: tl71
+            });
+            tl71.from('.awards .content__subtitle', {autoAlpha: 0, top: -200, ease: Power1.easeOut}, 0);
+            let awardsAwards = gsap.utils.toArray(".awards__list .content__award");
+            awardsAwards.forEach((award, index) => {
+                tl71.from(award, {autoAlpha: 0, bottom: -800 - 300 * index, ease: Power1.easeOut}, 0);
+            });
+            //awards end
+
+
+            //contacts start
+            sectionNumber++;
+
+            let tlTitle8 = gsap.timeline({paused: true});
+            tlTitle8.fromTo(titles[sectionNumber], {y: "100%"},{y: "0", duration: 0.2,});
+            tlTitle8.fromTo(titles[sectionNumber - 1], {y: "0"}, {y: "-100%", duration: 0.2,}, 0);
+
+
+            let tl8 = gsap.timeline();
+            let st8 = ScrollTrigger.create({
+                trigger: "body",
+                scrub:parseInt(scrubPower)/100,
+                start: "0 -" + (scrollDurationHome * (sectionNumber - 1.999) + projectBlocksScroll + newsBlocksScroll + addBlocksScroll*5),
+                end: "+=" + (scrollDurationHome),
+                onToggle: ({progress, direction, isActive}) => {
+                    if (!isActive && direction > 0) {
+                        if (!skipMode) tlTitle8.play();
+                        $('.header__menu li').removeClass('active');
+                        $('.header__menu li').eq(7).addClass('active');
+                    } else if (isActive && direction < 0) {
+                        if (!skipMode) tlTitle8.reverse();
+                        $('.header__menu li').removeClass('active');
+                        $('.header__menu li').eq(6).addClass('active');
+                    }
+                },
+                animation: tl8
+            });
+
+
+            let titlesContacts = gsap.utils.toArray(".contacts .content__title > *");
+            titlesContacts.forEach((title, index) => {
+                if (index % 2 === 0) {
+                    tl8.from(title, {autoAlpha: 0, right: -600 - 100 * index, ease: Power1.easeOut}, 0);
+                } else {
+                    tl8.from(title, {autoAlpha: 0, left: -600 - 100 * index, ease: Power1.easeOut}, 0);
+                }
+            });
+            tl8.from('.contacts .contacts__copyright', {autoAlpha: 0, bottom: -300, ease: Power1.easeOut}, 0);
+
+            let menuContacts = gsap.utils.toArray(".contacts .contacts__menu > li > *");
+            menuContacts.forEach((title, index) => {
+                tl8.from(title, {autoAlpha: 0, right: -700 - 150 * index, ease: Power1.easeOut}, 0);
+            });
+
+            let tl81 = gsap.timeline();
+            let st81 = ScrollTrigger.create({
+                trigger: "body",
+                scrub:parseInt(scrubPower)/100,
+                start: "0 -" + (scrollDurationHome * (sectionNumber - 1) + projectBlocksScroll + newsBlocksScroll + scrollDurationHome / 2 + addBlocksScroll*4),
+                end: "+=" + (scrollDurationHome / 2),
+                animation: tl81
+            });
+            tl81.from('.contacts .content__subtitle', {autoAlpha: 0, top: -200, ease: Power1.easeOut}, 0);
+            tl81.from('.contacts .content__brief', {autoAlpha: 0, left: -400, ease: Power1.easeOut}, 0);
+            tl81.from('.contacts .content__form', {autoAlpha: 0, right: -400, ease: Power1.easeOut}, 0);
+            //contacts end
