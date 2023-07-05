@@ -1195,16 +1195,16 @@ $(function (){
             }
         });
         if (valid){
-            let url = '/php/mail.php'
+            let url = '/php/mail.php';
             $.ajax({
                 type: "POST",
                 url: url,
                 data: form.serialize(),
-                success: function(data){
-                    alert(data);
+                success: function(data) {
+                    alert("Success: " + JSON.stringify(data));
                 },
-                error: function (data){
-                    alert(data);
+                error: function(data) {
+                    alert("Error: " + JSON.stringify(data));
                 }
             });
         } else {
@@ -1320,7 +1320,7 @@ function imagesDetails(indicador){
                     break;
             case 7: document.getElementById('profesNombre').innerHTML='Rubén<br>Marreta<br>';
                     document.getElementById('descript').innerHTML='Módulo 9 <br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam dignissimos esse tenetur ab. Minima ratione tempora soluta doloribus alias consequuntur qui vel corrupti aliquid amet? Aperiam, laboriosam suscipit ratione nobis quis deserunt nisi hic rerum porro dolorum cumque distinctio eum dolores, modi ex pariatur quibusdam quasi enim nam dolore illo doloribus delectus possimus. Maiores sit ipsam quos doloremque accusantium est numquam obcaecati hic qui consequuntur, perspiciatis exercitationem rerum corporis itaque alias sunt provident dolores. Odio qui recusandae nihil voluptatum fugit?';
-                    document.getElementById('frames').innerHTML='<iframe src="https://www.youtube.com/embed/0sbv0mq1UrE"></iframe>';
+                    document.getElementById('frames').innerHTML='<iframe src="https://player.vimeo.com/video/841897582?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"></iframe>';
                     setTimeout(function() {  document.getElementById('frames').classList.remove('animated'); }, 2000);
                     break;
         }
