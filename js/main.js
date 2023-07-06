@@ -1201,10 +1201,10 @@ $(function (){
                 url: url,
                 data: form.serialize(),
                 success: function(data) {
-                    alert("Success: " + JSON.stringify(data));
+                    alert("se ha enviado su consulta correctamente");
                 },
                 error: function(data) {
-                    alert("Error: " + JSON.stringify(data));
+                    alert("Error al enviar el correo");
                 }
             });
         } else {
@@ -1273,28 +1273,28 @@ function imagesDetails(indicador){
                     document.getElementById('frames').classList.add('animated');
                     document.getElementById('profesNombre').innerHTML='Romina<br>Coria<br>';
                     document.getElementById('descript').innerHTML='Módulos 1 y 5 <br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam dignissimos esse tenetur ab. Minima ratione tempora soluta doloribus alias consequuntur qui vel corrupti aliquid amet? Aperiam, laboriosam suscipit ratione nobis quis deserunt nisi hic rerum porro dolorum cumque distinctio eum dolores, modi ex pariatur quibusdam quasi enim nam dolore illo doloribus delectus possimus. Maiores sit ipsam quos doloremque accusantium est numquam obcaecati hic qui consequuntur, perspiciatis exercitationem rerum corporis itaque alias sunt provident dolores. Odio qui recusandae nihil voluptatum fugit?';
-                    document.getElementById('frames').innerHTML='<iframe src="https://www.youtube.com/embed/1r12glGg1Ec"></iframe>';
+                    document.getElementById('frames').innerHTML='<iframe src=""></iframe>';
                     setTimeout(function() {  document.getElementById('frames').classList.remove('animated'); }, 2000);
                     break;
             case 1:
                     document.getElementById('frames').classList.add('animated');
                     document.getElementById('profesNombre').innerHTML='Sebastian<br>Palermo<br>';
                     document.getElementById('descript').innerHTML='Módulos 2 y 10 <br>Sebastián Palermo es un médico destacado en el campo de la psiquiatría y ha adquirido una especialización notable en terapias cognitivas. A lo largo de su trayectoria profesional, ha acumulado una amplia experiencia trabajando en diversos centros de recuperación de adicciones y salud mental, brindando atención y apoyo a numerosos individuos. Con una sólida base en su formación médica, ha decidido expandir su labor al ámbito educativo, centrándose en la enseñanza de la educación emocional. Su principal objetivo es asistir a las personas en la resolución de conflictos emocionales, abordándolos de manera temprana y preventiva, antes de que puedan desencadenar adicciones o enfermedades mentales de mayor envergadura. A través de su enfoque integral y comprensivo, Sebastián Palermo busca brindar herramientas y conocimientos que permitan a las personas tomar el control de su bienestar emocional y alcanzar una vida plena y equilibrada.';
-                    document.getElementById('frames').innerHTML='<iframe src="https://www.youtube.com/embed/0sbv0mq1UrE"></iframe>';
+                    document.getElementById('frames').innerHTML='<iframe src=""></iframe>';
                     setTimeout(function() {  document.getElementById('frames').classList.remove('animated'); }, 2000);
                     break;
             case 2:
                 document.getElementById('frames').classList.add('animated'); 
                    document.getElementById('profesNombre').innerHTML='Daniel<br>Montaño<br>';
                    document.getElementById('descript').innerHTML='Módulo 3 <br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam dignissimos esse tenetur ab. Minima ratione tempora soluta doloribus alias consequuntur qui vel corrupti aliquid amet? Aperiam, laboriosam suscipit ratione nobis quis deserunt nisi hic rerum porro dolorum cumque distinctio eum dolores, modi ex pariatur quibusdam quasi enim nam dolore illo doloribus delectus possimus. Maiores sit ipsam quos doloremque accusantium est numquam obcaecati hic qui consequuntur, perspiciatis exercitationem rerum corporis itaque alias sunt provident dolores. Odio qui recusandae nihil voluptatum fugit?';
-                    document.getElementById('frames').innerHTML='<iframe src="https://www.youtube.com/embed/1r12glGg1Ec"></iframe>';
+                    document.getElementById('frames').innerHTML='<iframe src=""></iframe>';
                     setTimeout(function() {  document.getElementById('frames').classList.remove('animated'); }, 2000);
                     break;
             case 3: 
                     document.getElementById('frames').classList.add('animated');
                     document.getElementById('profesNombre').innerHTML='Benjamin<br>Coria<br>';
                     document.getElementById('descript').innerHTML='Módulo 4 <br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam dignissimos esse tenetur ab. Minima ratione tempora soluta doloribus alias consequuntur qui vel corrupti aliquid amet? Aperiam, laboriosam suscipit ratione nobis quis deserunt nisi hic rerum porro dolorum cumque distinctio eum dolores, modi ex pariatur quibusdam quasi enim nam dolore illo doloribus delectus possimus. Maiores sit ipsam quos doloremque accusantium est numquam obcaecati hic qui consequuntur, perspiciatis exercitationem rerum corporis itaque alias sunt provident dolores. Odio qui recusandae nihil voluptatum fugit?';
-                    document.getElementById('frames').innerHTML='<iframe src="https://www.youtube.com/embed/0sbv0mq1UrE"></iframe>';
+                    document.getElementById('frames').innerHTML='<iframe src=""></iframe>';
                     setTimeout(function() {  document.getElementById('frames').classList.remove('animated'); }, 2000);
                     break;
             case 4: 
@@ -1308,7 +1308,7 @@ function imagesDetails(indicador){
                     document.getElementById('frames').classList.add('animated');
                     document.getElementById('profesNombre').innerHTML='Lucila<br>Bettin<br>';
                     document.getElementById('descript').innerHTML='Módulo 7 <br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam dignissimos esse tenetur ab. Minima ratione tempora soluta doloribus alias consequuntur qui vel corrupti aliquid amet? Aperiam, laboriosam suscipit ratione nobis quis deserunt nisi hic rerum porro dolorum cumque distinctio eum dolores, modi ex pariatur quibusdam quasi enim nam dolore illo doloribus delectus possimus. Maiores sit ipsam quos doloremque accusantium est numquam obcaecati hic qui consequuntur, perspiciatis exercitationem rerum corporis itaque alias sunt provident dolores. Odio qui recusandae nihil voluptatum fugit?';
-                    document.getElementById('frames').innerHTML='<iframe src="https://www.youtube.com/embed/0sbv0mq1UrE"></iframe>';
+                    document.getElementById('frames').innerHTML='<iframe src=""></iframe>';
                     setTimeout(function() {  document.getElementById('frames').classList.remove('animated'); }, 2000);
                     break;
             case 6: 

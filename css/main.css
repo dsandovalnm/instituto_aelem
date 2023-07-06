@@ -908,6 +908,7 @@ body::-webkit-scrollbar-thumb {
     .home-page .content__awards {
       margin-left: -1.14583vw;
       margin-right: -1.14583vw;
+      margin-bottom: 7vw;
       height: -webkit-fill-available;
       display: -webkit-box;
       display: -ms-flexbox;
@@ -1164,7 +1165,7 @@ body::-webkit-scrollbar-thumb {
       position: relative;
       -webkit-box-sizing: border-box;
               box-sizing: border-box;
-      margin-top: 21.33333vh; }
+      margin-top: 19vh; }
       @media screen and (max-width: 768px) and (orientation: portrait) {
         .home-page .content__slider {
           margin-left: 0;
@@ -1232,7 +1233,7 @@ body::-webkit-scrollbar-thumb {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    margin-top: 1.5625vw; }
+    margin-top: -2vw; }
     @media screen and (max-width: 768px) and (orientation: portrait) {
       .slides__controls {
         margin-top: 5.33333vw; } }
