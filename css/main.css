@@ -386,6 +386,10 @@ body::-webkit-scrollbar-thumb {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     border-right: 1px solid rgba(230, 227, 217, 0.3); }
+    .header__letter:hover {
+      width: 110px;
+      transition: 1s;
+    }
     @media screen and (max-width: 768px) and (orientation: portrait) {
       .header__letter {
         width: auto;
@@ -416,6 +420,11 @@ body::-webkit-scrollbar-thumb {
               justify-content: center;
       width: 0.98958vw;
       height: 1.04167vw; }
+      .header__socials a:hover {
+        padding-bottom: 10px;
+        height: 1.5vw;
+        transition: 0.25s;
+    }
       @media screen and (max-width: 768px) and (orientation: portrait) {
         .header__socials a {
           width: 5.33333vw;
@@ -470,7 +479,7 @@ body::-webkit-scrollbar-thumb {
      }
      .header__phone:hover{
        width: 200px;
-       margin-left: -130px;
+       margin-left: -120px;
        border-radius: 15px;
        background-color:#48AFC5;
        transition: 1s ease-in-out;
@@ -491,9 +500,9 @@ body::-webkit-scrollbar-thumb {
      .header__phone:hover p{
       display: block;
       opacity: 1;
-      margin-bottom: 10px;
-      margin-left: 10px;
-      transition: 1.5s ease-in-out;
+      margin-bottom: 5px;
+      margin-left: 5px;
+      transition: 0.5s ease-in-out;
 
     }
     .header__phone a {

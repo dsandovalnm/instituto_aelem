@@ -966,7 +966,7 @@ $(window).on('load',function (){
     function Aelem(){
         let x=getHeiht();
         window.scrollTo({
-        top: 10,
+        top: 100,
         left: 0,
         behavior: 'smooth'
       });
