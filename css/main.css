@@ -461,6 +461,7 @@ body::-webkit-scrollbar-thumb {
     text-align: right; 
     display: flex;
     width: 24px;
+    margin-right: 0px;
     }
 
     .header__phone img{
@@ -469,6 +470,7 @@ body::-webkit-scrollbar-thumb {
      }
      .header__phone:hover{
        width: 200px;
+       margin-left: -130px;
        border-radius: 15px;
        background-color:#48AFC5;
        transition: 1s ease-in-out;
@@ -1426,7 +1428,7 @@ body::-webkit-scrollbar-thumb {
        height: 10px;
        margin-left:70%;
        margin-top:10px;
-   }
+   } 
    
     ul.slider{
        height:0px;
