@@ -1171,12 +1171,12 @@ body::-webkit-scrollbar-thumb {
           .home-page .content__form-btn {
             margin-top: 8vw; } }
     .home-page .content__slider {
-      margin-left: 17.65625vw;
+      margin-left: 4vw;
       padding-left: 10.41667vw;
       position: relative;
       -webkit-box-sizing: border-box;
               box-sizing: border-box;
-      margin-top: 19vh; }
+      margin-top: 4vh; }
       @media screen and (max-width: 768px) and (orientation: portrait) {
         .home-page .content__slider {
           margin-left: 0;
@@ -1185,7 +1185,7 @@ body::-webkit-scrollbar-thumb {
       .home-page .content__slider::before {
         content: "";
         display: block;
-        width: 5.26042vw;
+        width: 5.2604vw;
         height: 4.53125vw;
         position: absolute;
         left: 0;
@@ -1202,6 +1202,10 @@ body::-webkit-scrollbar-thumb {
         font-size: 1.14583vw;
         line-height: 1.59;
         text-transform: uppercase; }
+
+      .home-page .content__slider-text{
+          font-size: 1.5vw; 
+      }
         @media screen and (max-width: 768px) and (orientation: portrait) {
           .home-page .content__slider-name {
             margin-top: 8vw;
@@ -1214,7 +1218,7 @@ body::-webkit-scrollbar-thumb {
 
 .slides {
   position: relative;
-  width: 30.20833vw;
+  width: 55vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1231,7 +1235,7 @@ body::-webkit-scrollbar-thumb {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    height: 32.38095vh; }
+    height: 45vh; }
     @media screen and (max-width: 768px) and (orientation: portrait) {
       .slides__container {
         height: 66.66667vw; } }
