@@ -714,7 +714,7 @@ $(window).on('load',function (){
                 medida();
                 if (!isActive && direction > 0) {
                     if (!skipMode) tlTitle7.play();
-                } else if (isActive && direction < 0) {
+                } else if (isActive && direction < 0) { 
                     if (!skipMode) tlTitle7.reverse();
                 }
             },
@@ -1194,7 +1194,7 @@ $(function (){
                     break;
             }
         });
-        if (valid){
+         if (valid){
             let url = '/php/mail.php';
             $.ajax({
                 type: "POST",
