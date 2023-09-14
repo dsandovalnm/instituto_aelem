@@ -651,48 +651,50 @@
       <div class="overlay" id="overlay"></div>
                 
       <div class="popup" id="popup">
-      <div class="botoncierre">
-        <img src="img/close (1).png" class="cerrarPopup" id="cerrarPopup">
-      </div>
-        <br>
-        <iframe class="videoPopup" src="https://player.vimeo.com/video/863641962?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"  allow="autoplay"></iframe>
-    </div>
+        <img src="img/close.png" class="cerrarPopup" id="cerrarPopup">
+        <iframe class="videoPopupDesktop" id="video" src="https://player.vimeo.com/video/863641962?autoplay=1&amp;autopause=0&amp;badge=0&amp;player_id=0&amp;app_id=58479"allow="autoplay;"></iframe>
+        <iframe class="videoPopupMobile" id="video1" src="https://player.vimeo.com/video/863641813??background=1&amp;autoplay=1&amp;autopause=0&amp;badge=0&amp;app_id=58479"  allow=autoplay></iframe>
+     </div>
+    <script src="https://player.vimeo.com/api/player.js"></script>
     <script>
-      // Función para mostrar la ventana emergente
       function mostrarPopup() { 
         document.getElementById("popup").style.display = "block";
         document.getElementById("overlay").style.display = "block";
+        
         setTimeout(function () {
         document.getElementById("popup").classList.add("mostrar-popup");
-    }, 10); // Agregar una pequeña demora para permitir la transición
+        playVideoInt()
+    }, 10);
+    // Agregar una pequeña demora para permitir la transición
 }
       
       // Función para cerrar la ventana emergente
       function cerrarPopup() {
-        document.getElementById("popup").classList.remove("mostrar-popup");
-          document.getElementById("overlay").style.display = "none";
-      }
-      
-    
+          var popup = document.getElementById('popup');
+          var overlay= document.getElementById("overlay");
+          if (popup) {
+              popup.remove();
+              overlay.remove();
+          }
+      }       
       document.getElementById("cerrarPopup").addEventListener("click", cerrarPopup);
   </script>
     <style>
       /* Estilos para la ventana emergente */
-      .videoPopup{
+      .videoPopupDesktop{
         width: 99%;
-        height: 95%;
-        margin-top: -1.3%;
+        height: 99%;
         margin-bottom: 2.5%;
         border-radius: 15px;
       }
-      .botoncierre{
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
+      .videoPopupMobile{
+        display: none;
       }
       .cerrarPopup{
-        margin-left: 97.5%;
-        margin-right: 2.5%;
+        margin-left: 100%;
+        margin-right: 0%;
+        margin-top: -1%;
+        margin-bottom: 0.5%;
         height: 16px;
         width:16px;
         padding: 0px;
@@ -707,12 +709,10 @@
           overflow: hidden;
           padding: 20px;
           opacity:0;
-          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
           z-index: 1000;
           border-radius: 10px;
-          background-color: #201c1c;
-          border: 0.5px solid #d3cdba;
-          transition: 0.8s ease-in-out;
+          background-color: rgba(0, 0, 0, 0);
+          transition: 0.5s ease-in-out;
          
       }
       .mostrar-popup {
@@ -731,6 +731,29 @@
           background-color: rgba(0, 0, 0, 0.5);
           z-index: 999;
       }
+      @media screen and (max-width: 768px) and (orientation: portrait) {
+        .videoPopupDesktop{
+          display: none;
+      }
+      .popup{
+        background-color: rgba(0, 0, 0, 0);
+      }
+      .videoPopupMobile{
+        display: block;
+        margin: -5%;
+        width: 110%;
+        height: 100%;
+        margin-top: 1%;
+        border-radius: 15px;
+      }  
+      .mostrar-popup {
+          opacity: 1;
+          top:50%;
+          width: 90%;
+          height: 95%;
+      }
+      }
+   
   </style>
     </main>
     <script src="js/main.js"></script>
