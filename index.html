@@ -1,761 +1,212 @@
-<!DOCTYPE html>
-<html lang="ru">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="keywords" content="">
-    <meta name="format-detection" content="telephone=no">
-    <title>INSTITUTO AELEM</title>
-    <link href="css/main.css" rel="stylesheet">
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-    <style>
-      @keyframes animate-circle {
-        from {
-          transform: scale(0);
-          opacity: 1;
-        }
-        to {
-          transform: scale(1);
-          opacity: 0;
-        }
-      }
-      #preloader{
-        width: 100%;
-        height: 100%;
-        position: fixed;
-        top: 0;
-        left: 0;
-        z-index: 999;
-        background: #1C1C1C;
-        background: linear-gradient(to right, rgba(36, 31, 31, 1) 0%, rgba(36, 31, 31, 1) 32%, rgba(74, 71, 70, 1) 100%);
-      }
-      .loader {
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        height: 15rem;
-        width: 15rem;
-        transform: translateX(-50%) translateY(-50%);
-      }
-      .loader > .circle {
-        position: absolute;
-        height: 10rem; 
-        width: 10rem; 
-        background-image:url("img/Loader/fotogramasUnidos.png");
-        background-size: cover;
-        background-position: 0 0;
-        animation: load 1.5s ease-in-out infinite;     
-      }
-      @media screen and (max-width: 768px) {
-        .loader {
-        position: fixed;
-        top: 50%;
-        left: 57%;
-        height: 15rem;
-        width: 15rem;
-        transform: translateX(-50%) translateY(-50%);
-        }
-      }
-        @keyframes load{
-        0% {background-position: 0 0;
-        opacity: 1;}
-        4% {background-position: 0 0;}
-        4.01% {background-position: -10rem 0;}
-        8% {background-position: -10rem 0;}
-        8.01% {background-position: -20rem 0;}
-        12% {background-position: -20rem 0;}
-        12.01% {background-position: -30rem 0;}
-        16% {background-position: -30rem 0;}
-        16.01% {background-position: -40rem 0;}
-        20% {background-position: -40rem 0;}
-        20.01% {background-position: -50rem 0;}
-        24% {background-position: -50rem 0;}
-        24.01% {background-position: -60rem 0;}
-        28% {background-position: -60rem 0;}
-        28.01% {background-position: -70rem 0;}
-        32% {background-position: -70rem 0;}
-        32.01% {background-position: -80rem 0;}
-        36% {background-position: -80rem 0;}
-        36.01% {background-position: -90rem 0;}
-        40% {background-position: -90rem 0;}
-        40.01% {background-position: -100rem 0;}
-        44% {background-position: -100rem 0;}
-        44.01% {background-position: -110rem 0;}
-        48% {background-position: -110rem 0;}
-        48.01% {background-position: -120rem 0;}
-        52% {background-position: -120rem 0;}
-        52.01% {background-position: -130rem 0;}
-        56% {background-position: -130rem 0;}
-        56.01% {background-position: -140rem 0;}
-        60% {background-position: -140rem 0;}
-        60.01% {background-position: -150rem 0;}
-        64% {background-position: -150rem 0;}
-        64.01% {background-position: -160rem 0;}
-        68% {background-position: -160rem 0;}
-        68.01% {background-position: -170rem 0;}
-        72% {background-position: -170rem 0;}
-        72.01% {background-position: -180rem 0;}
-        76% {background-position: -180rem 0;}
-        76.01% {background-position: -190rem 0;}
-        80% {background-position: -190rem 0;}
-        80.01% {background-position: -200rem 0;}
-        84% {background-position: -200rem 0;}
-        84.01% {background-position: -210rem 0;}
-        88% {background-position: -210rem 0;}
-        88.01% {background-position: -220rem 0;}
-        92% {background-position: -220rem 0;}
-        92.01% {background-position: -230rem 0;}
-        96% {background-position: -230rem 0;}
-        96.01% {background-position: -240rem 0;}
-        99.99999%{opacity: 1;}
-        100% {background-position: -240rem 0;
-        opacity: 0;}
-      }
-      
-      
-     .loader > .circle:nth-of-type(1) {
-        animation-delay: 0s;
-      }
-      /*.loader > .circle:nth-of-type(2) {
-        animation-delay: calc(2s / -3);
-      }
-      .loader > .circle:nth-of-type(3) {
-        animation-delay: calc(2s / -6);
-      }*/
-      .redesTop{
-        margin-top: 10px;
-        margin-left: 10px;
-      }
-    </style>
-  </head>
-  <body onload="mostrarPopup()" id="Body">
-    
-    <div id="preloader">
-      <div class="loader">
-        <div class="circle"></div>
-        <div class="circle"></div>
-      </div>
-    </div>
-    <main class="main main--home" style="opacity:0">
-      <canvas class="noise" id="noise"></canvas>
-      <div class="header">
-        <div class="header__left">
-          <div class="header__letter"><img src="img/logo_blanco2.png" alt=""></div>
-          <div class="header__socials">
-              <a href="https://www.facebook.com/institutoaelem?mibextid=ZbWKwL" target="_blank">
-                <img src="img/facebookLogo.png" alt="">
-              </a>
-              <a href="https://www.instagram.com/institutoaelem/" target="_blank">
-                <img src="img/instagram.png" alt="">
-              </a>
-              <a href="https://www.youtube.com/@AyudaEnLasEmociones" target="_blank">
-                <img src="img/youtube (1).png" alt="">
-              </a>
-          </div>
-        </div>
-        <div class="header__right">
-          <ul class="header__menu">
-            <li class="active"><a onclick="Aelem()" data-link="0">AELEM</a></li>
-            <li><a onclick="Instructorado()" data-link="1">Instructorado</a></li>
-            <li><a onclick="Materias()" data-link="2">Materias</a></li>
-            <li><a onclick="Inscripcion()" data-link="3">inscribirse</a></li>
-            <li><a onclick="Profesores()" data-link="4">profesores</a></li>
-            <li><a onclick="Campus()" data-link="5">campus</a></li>
-            <li><a onclick="Testimonios()" data-link="6">Testimonios</a></li>
-            <li><a onclick="Contacto()"  data-link="7">CONTACTO</a></li>
-          </ul>
-          <div class="header__phone" ><a href="tel:+5493518090153"><img src="img/phone-call.png" id="PhoneImg" alt=""><p>+5493518090153</p></a></div>
-        </div>
-      </div>
-      <div class="scroll">
-        <div class="home-page">
-          <div class="page-title show">
-            <ul>
-              <li>
-                <div class="title">AYUDA EN LAS EMOCIONES</div>
-                <div class="number">1.0</div>
-              </li>
-              <li>
-                <div class="title">INSTRUCTORADO</div>
-                <div class="number">2.0</div>
-              </li>
-              <li>
-                <div class="title">MATERIAS</div>
-                <div class="number">3.0</div>
-              </li>
-              <li>
-                <div class="title">Inscribirse</div>
-                <div class="number">4.0</div>
-              </li>
-              <li>
-                <div class="title">Profesores</div>
-                <div class="number">5.0</div>
-              </li>
-              <li>
-                <div class="title">CAMPUS</div>
-                <div class="number">6.0</div>
-              </li>
-              <li>
-                <div class="title">TESTIMONIOS</div>
-                <div class="number">7.0</div>
-              </li>
-              <li>
-                <div class="title">CONTACTO</div>
-                <div class="number">8.0</div>
-              </li>
-            </ul>
-            <canvas class="noise noise--inner" id="noise_menu"></canvas>
-          </div>
-          <div class="scrollable" onmouseenter="mqm()">
-            <section class="home">
-              <div class="sticky-title">
-                <ul>
-                  <li>
-                    <div>ayuda en las emociones</div>
-                    <div>1.0</div>
-                  </li>
-                </ul>
-              </div>
-              <div class="content">
-                <div class="content__left" style="background-image: url(images/profesor.png); background-size: cover; background-repeat: no-repeat; background-position: center center;">
-                  <div class="content__title">
-                    <div class="h1">Bienvenidos al </div>
-                    <div class="h1">Instituto</div>
-                    <div class="h1">AELEM</div>
-                  </div>
-                  <div class="content__description">
-                    <div class="small">Nuestra misión es brindarte herramientas para que puedas gestionar tus emociones y ayudar a otros</div>
-                  </div>
-                  <div class="content__btn-block">
-                    <div class="content__btn-label small"></div><a class="content__btn-btn btn btn--arrow" href="https://ayudaenlasemociones.com/plataforma/login">
-                      Campus</a>
-                  </div>
-                  
-                  <!--<div class="home__numbers">
-                    <div class="home__number">
-                      <div class="home__number-digital" data-number="8">8</div>
-                      <div class="home__number-text small">Years <br>experience</div>
-                    </div>
-                    <div class="home__number">
-                      <div class="home__number-digital" data-number="5">5</div>
-                      <div class="home__number-text small">Themeforest <br>awwards</div>
-                    </div>
-                    <div class="home__number">
-                      <div class="home__number-digital" data-number="60">60</div>
-                      <div class="home__number-text small">Projects <br>Done</div>
-                    </div>
-                  </div>-->
-                </div>
-                <div class="content__right">
-                  <div class="home__circles">
-                    <div class="home__circles-lines"></div>
-                    <div class="home__circle home__circle--left"><img class="home__circle-img" src="img/LOGO INSTITUTO EN PNG.png" alt=""></div>
-                    <div class="home__circle home__circle--right">
-                      <div class="h1">
-                        <h1><span>Capacitate <br>y ayuda a <br>otros</span><br></h1>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </section>
-          </div>
-          <div class="scrollable">
-            <section class="projects" >
-              <div class="sticky-title">
-                <ul>
-                  <li>
-                    <div>NIVELES</div>
-                    <div>2.0</div>
-                  </li>
-                </ul>
-              </div>
-              <div class="content" id="qsy">
-                <div class="content__left">
-                  <div class="content__title">
-                    <div class="h1">NIVELES</div>
-                  </div>
-                  <ul class="content__menu projects__menu">
-                    <li class="active"><a href="javascript:;">NIVEL 1</a></li>
-                    <li><a href="javascript:;">NIVEL 2</a></li>
-                    <li><a href="javascript:;">NIVEL 3</a></li>
-                    <!--<li><a href="javascript:;">Gilhouse - architecture website</a></li>
-                    <li><a href="javascript:;">gilber - personal website</a></li>
-                    <li><a href="javascript:;">jonny - personal website</a></li>-->
-                  </ul>
-                  
-                  <ul class="content__menu_movil projects__menu" onclick="imagesDetails(1)">
-                    <li class="active" ><a href="#Nivel1"><div><h2>NIVEL 1</h2><img class="mostrar" src="img/caret-abajo.png"></div></a></li>
-                    <li class="active"><a href="#Nivel2"><div><h2>NIVEL 2</h2><img class="mostrar" src="img/caret-abajo.png"></div></a></li>
-                    <li class="active"><a href="#Nivel3"><div><h2>NIVEL 3</h2><img class="mostrar" src="img/caret-abajo.png"></div></a></li>
-                  </ul>
-                  <ul class="slider" id="NivelesImg">
-                       <li class="imgNivel" id="Nivel1"><a href=""><img src="img/1.png" width="100%" alt=""></li>
-                       <li class="imgNivel" id="Nivel2"><a href=""><img src="img/2.png" width="100%" alt=""></li>
-                       <li class="imgNivel" id="Nivel3"><a href=""><img src="img/3.png" width="100%" alt=""></li>
-                  </ul>
-                  
-                </div>
-                <div class="content__right">
-                  <div class="projects__blocks">
-                    <div class="projects__block active"><a><img src="img/1.png" width="80%" alt=""></a></div>
-                    <div class="projects__block active"><a><img src="img/2.png" alt=""></a></div>
-                    <div class="projects__block active"><a><img src="img/3.png" alt=""></a></div>
-                    <!--<div class="projects__block active"><a href="#" target="_blank" rel="nofollow"><img src="img/project-4.jpg" alt=""></a></div>
-                    <div class="projects__block active"><a href="#" target="_blank" rel="nofollow"><img src="img/project-5.jpg" alt=""></a></div>
-                    <div class="projects__block active"><a href="#" target="_blank" rel="nofollow"><img src="img/project-6.jpg" alt=""></a></div>
-                    --></div>
-                </div>
-              </div>
-              
-            </section>
-          </div>
-          
-          <div class="scrollable">
-            <section class="news">
-              <div class="sticky-title">
-                <ul>
-                  <li>
-                    <div>MATERIAS</div>
-                    <div>3.0</div>
-                  </li>
-                </ul>
-              </div>
-              <div class="content">
-                <div class="content__left">
-                  <div class="content__title">
-                    <div class="h1">MATERIAS que</div>
-                    <div class="h1">Estudiaras</div>
-                    <div class="small">Una pequeña guía para tí</div>
-                  </div>
-                  <ul class="content__menu_movil projects__menu" onclick="imagesDetails(2)">
-                    <li class="active" ><a href="#Nivel1m"><div><h2>NIVEL 1</h2><img class="mostrar" src="img/caret-abajo.png"></div></a></li>
-                    <li class="active"><a href="#Nivel2m"><div><h2>NIVEL 2</h2><img class="mostrar" src="img/caret-abajo.png"></div></a></li>
-                    <li class="active"><a href="#Nivel3m"><div><h2>NIVEL 3</h2><img class="mostrar" src="img/caret-abajo.png"></div></a></li>
-                  </ul>
-                  <ul class="slider" id="MateriasImg">
-                       <li class="imgNivel" id="Nivel1m"><img src="img/Nivel1.png" width="100%" alt=""></li>
-                       <li class="imgNivel" id="Nivel2m"><img src="img/Nivel2.png" width="100%" alt=""></li>
-                       <li class="imgNivel" id="Nivel3m"><img src="img/Nivel3.png" width="100%" alt=""></li>
-                  </ul>
-                  <ul class="content__menu news__menu">
-                    <li class="active"><a href="javascript:;">Materias nivel uno</a></li>
-                    <li><a href="javascript:;">Materias nivel dos</a></li>
-                    <li><a href="javascript:;">materias nivel tres</a></li>
-                    <!--<li><a href="javascript:;">Best typography 2020</a></li>
-                    <li><a href="javascript:;">my name is pattison</a></li>-->
-                  </ul>
-                    
-                </div>
-                <div class="content__right">
-                  <div class="news__blocks">
-                    <div class="news__block active">
-                      <div class="news__block-info">
-                        <div class="news__block-number">(01)</div>
-                      </div>
-                      <div class="news__block-image"><a><img src="img/Nivel1.png" alt=""></a></div>
-                    </div>
-                    <div class="news__block active">
-                      <div class="news__block-info">
-                        <div class="news__block-number">(02)</div>
-                      </div>
-                      <div class="news__block-image"><a><img src="img/Nivel2.png" alt=""></a></div>
-                    </div>
-                    <div class="news__block active">
-                      <div class="news__block-info">
-                        <div class="news__block-number">(03)</div>
-                      </div>
-                      <div class="news__block-image"><a><img src="img/Nivel3.png" alt=""></a></div>
-                    </div>
-                  </div>
-                </div>
-            </section>
-          </div>
-          
-          <div class="scrollable">
-            <section class="experience">
-              <div class="sticky-title">
-                <ul>
-                  <li>
-                    <div>Inscribirse</div>
-                    <div>4.0</div>
-                  </li>
-                </ul>
-              </div>
-              <div class="content">
-                <div class="content__bg" style="background-image: url(img/InstAelem.png);"></div>
-                <div class="content__left">
-                  <div class="content__title">
-                    <div class="h1">Inscríbete</div>
-                    <div class="h1">Ahora</div>
-                  </div>
-                </div>
-                <div class="content__right">
-                  <div class="content__awards experience__list">
-                    <div class="content__award">
-                      <div class="h1Inscript">Haz click en el botón de Whatsapp y un asesor te brindará toda la información del instructorado y te guiará en la inscripción</div>
-                    </div>
-                    <div class="content__award"><a href="https://wa.me/message/HZ2VZQEODVWDI1?src=qr" target="_blank">
-                      <div class="content__award-img"><img src="img/whatsapp.png" alt=""></div>
-                      <div class="content__award-title">
-                        <p>Inscribirse</p><p class="sbtitle">Hacer click aquí</p>
-                      </div>
-                      <div class="content__award-img2"><img src="img/whatsapp.png" alt=""></div>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </section>
-          </div>
-          <div class="scrollable">
-            <section class="teachers">
-              <div class="sticky-title">
-                <ul>
-                  <li>
-                    <div>Profesores</div>
-                    <div>5.0</div>
-                  </li>
-                </ul>
-              </div>
-              <div class="content">
-                <div class="content__left">
-                  <div class="content__title">
-                    <div class="h1" id="profesNombre">conoce a tus profesores</div>
-                  </div>
-                  <br>
-                  <br>
-                  
-                  <div class="content__description-prof">
-                    <div class="prof-small" id="descript">Cada uno de nuestros profesores tiene una amplia experiencia y ha demostrado un profundo conocimiento en su área de especialización y algunos de ellos son reconocidos internacionalmente. Todos ellos comparten un compromiso con la excelencia académica y están ansiosos por compartir sus conocimientos y experiencia con nuestros estudiantes para que estos puedan gestionar sus emociones y ayudar a otros. Hace click en su foto y descubre que materia tendrás con cada uno de ellos.</div>
-                  </div>
-                  <br>
-                  <br>
-                  <ul class="puntos">
-                   
-                    <li class="punto"><img src="img/Profesores/romina.jpg" alt=""></li>
-                    <li class="punto"><img src="img/Profesores/sebastian.jpg" alt=""></li>
-                    <li class="punto"><img src="img/Profesores/daniel.jpg" alt=""></li>
-                    <li class="punto"><img src="img/Profesores/Benjamín.jpg" alt=""></li>
-                    <li class="punto"><img src="img/Profesores/evangelina.jpg" alt=""></li>
-                    <li class="punto"><img src="img/Profesores/lucila.jpg" alt=""></li>
-                    <li class="punto"><img src="img/Profesores/juan.jpg" alt=""></li>
-                    <li class="punto"><img src="img/Profesores/ruben.jpg" alt= ""></li>
-                  </ul>
-                </div>
-                <div class="content__right">
-                  <div class="carrousel">
-                    <div class="grande">
-                      <div class="iframe-container" id="frames">
-                        <iframe src="" id="frame"></iframe>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </section>
-          </div>
-          
-          <div class="scrollable" id="Cxampus">
-            <section class="awards"style="background-image: url(images/campus.png); background-size: cover; background-repeat: no-repeat; background-position: center center;">
-              <div class="sticky-title">
-                <ul>
-                  <li>
-                    <div>Campus</div>
-                    <div>6.0</div>
-                  </li>
-                </ul>
-              </div>
-              <div class="content">
-                <div class="content__left">
-                  <div class="content__title">
-                    <div class="h1">inicia</div>
-                    <div class="h1">sesión</div>
-                  </div>
-                  <div class="content__description">
-                    <div class="small">Introduce tu usuario y contraseña para acceder a todas las herramientas que tenemos para tí</div>
-                  </div>
-                  <div class="content__btn-block">
-                    <div class="content__btn-label small"></div><a class="content__btn-btn btn btn--arrow" href="https://ayudaenlasemociones.com/plataforma/login">
-                      Acceso al campus</a>
-                  </div>
-                </div>
-                <div class="content__right">
-                  <div class="content__subtitle">Educación <span>Emocional</span></div>
-                  <div class="content__awards awards__list">
-                    <div class="content__award">
-                      <div class="content__award-img"><img src="img/video.png" alt=""></div>
-                      <div class="content__award-title">
-                        <p>VIDEOS</p>
-                      </div>
-                      <div class="content__award-text small">Cada materia del Instructorado cuenta con videos para disfrutar en formato 100% Online y On Demand. 
-                      </div>
-                    </div>
-                    <div class="content__award">
-                      <div class="content__award-img"><img src="img/pdf.png" alt=""></div>
-                      <div class="content__award-title">
-                        <p>PDF</p>
-                      </div>
-                      <div class="content__award-text small">Todo el Instructorado tiene material de apoyo en formato PDF totalmente gratuito y descargable desde cualquier dispositivo.</div>
-                    </div>
-                    <div class="content__award">
-                      <div class="content__award-img"><img src="img/libro-abierto.png" alt=""></div>
-                      <div class="content__award-title">
-                        <p>LIBROS</p>
-                      </div>
-                      <div class="content__award-text small">Incluyen algunos materiales escritos del Dr. Palermo como material de apoyo en la formación del Instructor.</div>
-                    </div>
-                    <div class="content__award">
-                      <div class="content__award-img"><img src="img/clase-en-linea.png" alt=""></div>
-                      <div class="content__award-title">
-                        <p>CLASES EN VIVO</p>
-                      </div>
-                      <div class="content__award-text small">Tendrás clases en vivo con el Dr, Palermo y todo su Staff de profesionales para aclarar dudas y consultas respecto al material de estudio que te daremos.</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </section>
-          </div>
-          <div class="scrollable">
-            <section class="testimonials">
-              <div class="sticky-title">
-                <ul>
-                  <li>
-                    <div>testimonios</div>
-                    <div>7.0</div>
-                  </li>
-                </ul>
-              </div>
-              <div class="content" style="background-image: url(images/testimonios1.png); background-size: cover; background-repeat: no-repeat; background-position: center center;">
-                <div class="content__left">
-                  <div class="content__title">
-                    <!--<div class="h1">+250</div>
-                    <div class="h1">happy</div>-->
-                    <div class="h1">Testimonios</div>
-                    <div class="small">De nuestros alumnos</div>
-                  </div>
-                  <!--<div class="testimonials__clients">
-                    <div class="testimonials__client"><img src="img/client-1.png" alt=""></div>
-                    <div class="testimonials__client"><img src="img/client-2.png" alt=""></div>
-                    <div class="testimonials__client"><img src="img/client-3.png" alt=""></div>
-                    <div class="testimonials__client"><img src="img/client-4.png" alt=""></div>
-                  </div>-->
-                </div>
-                <div class="content__right">
-                  <div class="content__subtitle"><span>Experiencias</span> reales contadas en primera persona</div>
-                  <div class="content__slider slides testimonials__slider">
-                    <div class="slides__container">
-                      <div class="slides__inner">
-                        <div class="slide">
-                          <div class="content__slider-text small">“ Estimados directivos del Instituto, quiero honrar la tarea que hacen desde aelem ya que ha sido de mucho crecimiento personal, espiritual y de relacionamiento desde mi experiencia. Además de una herramienta de transformación ya que abunda la necesidad de escucha activa en nuestro alrededor.“</div>
-                          <div class="content__slider-name">Debra Valerie Hardouin</div>
-                          <div class="content__slider-staff small"></div>
-                        </div>
-                        <div class="slide">
-                          <div class="content__slider-text small">“ Es un gran privilegio para mi, comentar mi experiencia sobre este grupo humano de alto nivel de profesionales que nos acompañaron por este paso en por el instituto, experiencia que sobrepasaron ampliamente mis expectativas: los conocimientos que aporta son muy ricos abundantes y nutritivos, ya que realmente, si sabes aprovechar, podés sacar muchísimo provecho, que te llevarás para siempre a tu vida.“</div>
-                          <div class="content__slider-name">Carla Suarez</div>
-                          <div class="content__slider-staff small"></div>
-                        </div>
-                        <div class="slide">
-                          <div class="content__slider-text small">“ Mi experiencia con el instructorado de la educación emocional ha sido realmente revelador para poder cambiar cosas de Cosmovisión y en cuanto a actuaciones y comportamientos en mi trabajo como sanitaria.“</div>
-                           <div class="content__slider-name">Debora Arjona Puchol</div>
-                          <div class="content__slider-staff small"></div>
-                        </div>
-                        <div class="slide">
-                          <div class="content__slider-text small">“ El instructorado fue una llave para comprender la falta que nos hace educar nuestras emociones, primero como herramienta personal, para identificar y trabajar sobre areas no resueltas, ser funcionales en la vida y avanzar. No solo me sirvio a mí sino que pude ver y ver en mi familia patrones y dinamicas que desde ahora y gracias a este entrenamiento, me sirvió para aconsejar, guiar, y establecer cambios atravez de distintas herramientas. Muy interesante!!!Gracias!!!.“</div>
-                          <div class="content__slider-name">Gabriela Dojorti</div>
-                          <div class="content__slider-staff small"></div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="slides__controls">
-                      <button class="slides__btn slides__btn--prev btn btn--invert btn--arrow" id="prevButton">
-                        <svg>
-                          <use xlink:href="./svg/sprite.svg#arrow"></use>
-                        </svg>
-                      </button>
-                      <button class="slides__btn slides__btn--next btn btn--arrow" id="nextButton">
-                        <svg>
-                          <use xlink:href="./svg/sprite.svg#arrow"></use>
-                        </svg>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </section>
-          </div>
-          
-          <div class="scrollable" id="hireme">
-            <section class="contacts" style="background-image: url(images/contacto.png); background-size: cover; background-repeat: no-repeat; background-position: center center;">
-              <div class="sticky-title">
-                <ul>
-                  <li>
-                    <div>CONTACTO</div>
-                    <div>8.0</div>
-                  </li>
-                </ul>
-              </div>
-              <div class="content">
-                <div class="content__left">
-                  <div class="content__title">
-                    <div class="h1">Contactenos</div>
-                    <div class="small">Para responder sus dudas</div>
-                  </div>
-                  <ul class="content__menu contacts__menu">
-                    <li class="active"><a class="noicon" href="javascript:;" onclick="window.open('mailto:institutoaelem@gmail.com')">mail: institutoaelem@gmail.com</a></li>
-                    <li class="active"><a href="https://www.ayudaenlasemociones.com/" target="_blank">ayudaenlasemociones.com</a></li>
-                    <li class="active"><a class="noicon" href="https://api.whatsapp.com/send?phone=5493518090153&text=Hola,%20tengo%20una%20duda%20sobre%20el%20instructorado" target="_blank">Whatsapp </a></li>
-                  </ul>
-                  </div>
-                <div class="content__right">
-                  <div class="content__subtitle">Escribenos <br>un <span>asesor</span> <br> te espera!</div>
-                  <form class="content__contacts contacts__form js-contact-form" method="post">
-                    <div class="content__brief">
-                      <div class="content__brief-title">
-                          <span>envianos tu pregunta</span>
-                      </div>
-                      <div class="content__brief-text small">comuniquese con nosotros para responder sus preguntas<label for="brief"></label></div>
-                    </div>
-                    <div class="content__form">
-                      <label class="content__form-input">
-                        <input type="text" name="name"><span class="content__form-placeholder">NOMBRE</span>
-                      </label>
-                      <label class="content__form-input">
-                        <input type="email" name="emal" required=""><span class="content__form-placeholder">EMAIL</span>
-                      </label>
-                      <label class="content__form-input">
-                        <input type="text" name="msg" required="" minlength="10"><span class="content__form-placeholder">MENSAJE</span>
-                      </label>
-                      <div class="content__form-btn">
-                        <button class="btn btn--arrow" type="submit">
-                          <svg>
-                            <use xlink:href="./svg/sprite.svg#arrow"></use>
-                          </svg>
-                        </button>
-                      </div>
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </section>
-          </div>
-          <audio id="carga-audio" autoplay>
-            <source src="audio/beautiful-piano-logo-143488.mp3" type="audio/mp3">
-          </audio>
-        </div>
-      </div>
+﻿<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]>
+<!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
 
-      <div class="overlay" id="overlay"></div>
-                
-      <div class="popup" id="popup">
-        <img src="img/close.png" class="cerrarPopup" id="cerrarPopup">
-        <iframe class="videoPopupDesktop" id="video" src="https://player.vimeo.com/video/863641962?autoplay=1&amp;autopause=0&amp;badge=0&amp;player_id=0&amp;app_id=58479"allow="autoplay;"></iframe>
-        <iframe class="videoPopupMobile" id="video1" src="https://player.vimeo.com/video/863641813??background=1&amp;autoplay=1&amp;autopause=0&amp;badge=0&amp;app_id=58479"  allow=autoplay></iframe>
-     </div>
-    <script src="https://player.vimeo.com/api/player.js"></script>
-    <script>
-      function mostrarPopup() { 
-        document.getElementById("popup").style.display = "block";
-        document.getElementById("overlay").style.display = "block";
-        
-        setTimeout(function () {
-        document.getElementById("popup").classList.add("mostrar-popup");
-        playVideoInt()
-    }, 10);
-    // Agregar una pequeña demora para permitir la transición
-}
-      
-      // Función para cerrar la ventana emergente
-      function cerrarPopup() {
-          var popup = document.getElementById('popup');
-          var overlay= document.getElementById("overlay");
-          if (popup) {
-              popup.remove();
-              overlay.remove();
-          }
-      }       
-      document.getElementById("cerrarPopup").addEventListener("click", cerrarPopup);
-  </script>
-    <style>
-      /* Estilos para la ventana emergente */
-      .videoPopupDesktop{
-        width: 99%;
-        height: 99%;
-        margin-bottom: 2.5%;
-        border-radius: 15px;
-      }
-      .videoPopupMobile{
-        display: none;
-      }
-      .cerrarPopup{
-        margin-left: 100%;
-        margin-right: 0%;
-        margin-top: -1%;
-        margin-bottom: 0.5%;
-        height: 16px;
-        width:16px;
-        padding: 0px;
-      }
-      .popup {
-          display: none;
-          position: fixed;
-          top: 100%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          width: 30px;
-          overflow: hidden;
-          padding: 20px;
-          opacity:0;
-          z-index: 1000;
-          border-radius: 10px;
-          background-color: rgba(0, 0, 0, 0);
-          transition: 0.5s ease-in-out;
-         
-      }
-      .mostrar-popup {
-          opacity: 1;
-          top:50%;
-          width: 70%;
-          height: 75%;
-      }
-      .overlay {
-          display: none;
-          position: fixed;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background-color: rgba(0, 0, 0, 0.5);
-          z-index: 999;
-      }
-      @media screen and (max-width: 768px) and (orientation: portrait) {
-        .videoPopupDesktop{
-          display: none;
-      }
-      .popup{
-        background-color: rgba(0, 0, 0, 0);
-      }
-      .videoPopupMobile{
-        display: block;
-        margin: -5%;
-        width: 110%;
-        height: 100%;
-        margin-top: 1%;
-        border-radius: 15px;
-      }  
-      .mostrar-popup {
-          opacity: 1;
-          top:50%;
-          width: 90%;
-          height: 95%;
-      }
-      }
-   
-  </style>
-    </main>
-    <script src="js/main.js"></script>
-  </body>
+	<!-- Basic Page Needs
+  ================================================== -->
+	<meta charset="utf-8">
+	<title>Instituto AELEM</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<!-- Mobile Specific Metas
+  ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- Font
+  ================================================== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  
+	<!-- CSS
+  ================================================== -->
+	<link rel="stylesheet" href="css/base.css"/>
+	<link rel="stylesheet" href="css/skeleton.css"/>
+	<link rel="stylesheet" href="css/layout.css"/>
+	<link rel="stylesheet" href="css/font-awesome.css" />
+	<link rel="stylesheet" href="css/retina.css"/>
+	<link rel="stylesheet" href="css/owl.carousel.css"/>
+	<link rel="stylesheet" href="css/owl.transitions.css"/>
+	
+
+		
+	<!-- Favicons
+	================================================== -->
+	<link rel="shortcut icon" href="favicon.ico">
+	
+	<script type="text/javascript" src="js/modernizr.custom.js"></script> 
+	
+	
+</head>
+<!-- hijacking: on/off - animation: none/scaleDown/rotate/gallery/catch/opacity/fixed/parallax -->
+<body class="royal_loader" data-hijacking="on" data-animation="scaleDown">	
+
+	<!-- Primary Page Layout
+	================================================== -->
+
+		
+	<!-- Nav and Logo
+	================================================== -->
+
+		<header class="cd-header">
+		
+			<div class="container">		
+				<div class="twelve columns">	
+					<div class="logo-wrap">
+						<img src="images/logo.png" alt="">
+					</div>
+					<a class="cd-primary-nav-trigger" href="#0">
+						<span class="cd-menu-text"></span><span class="cd-menu-icon"></span>
+					</a>
+				</div>	
+			</div>		
+				
+		</header>
+
+		<nav>
+			<div class="cd-primary-nav">
+				<ul class="cd-scndr-nav">
+					
+					<li class="cd-label"><a href="index.html" class="curent-nav-color">inicio</a></li>
+					
+					<li class="cd-label"><a href="about.html">Instructorado</a></li>
+					
+					<li class="cd-label"><a href="blog.html">Materias</a></li>
+					
+					<li class="cd-label"><a href="profes.html">Profesores</a></li>
+					
+					<li class="cd-label"><a href="contact.html">Contacto</a></li>
+					
+				</ul>	
+				
+				<div class="social-nav">
+					
+				</div>
+								
+			</div>
+		</nav>
+
+<main class="cd-main-content">
+	
+	<section class="cd-section visible">
+		<div>		
+			<div class="hero-top">							
+				<div class="container">	
+					<div class="twelve columns">
+					
+						<div id="owl-text-home" class="owl-carousel owl-theme">
+	 
+							<div class="item"><h2>Instituto Aelem</h2></div>
+							<div class="item"><h2>Educación emocional</h2></div>
+							<div class="item"><h2>#Emociones sanas	</h2></div>
+						 
+						</div>
+						
+						<p>CAPACITATE Y AYUDA A OTROS!</p>
+						<div class="social-top">
+							<a href="https://ayudaenlasemociones.com/plataforma"><div class="button button--moema button--text-thick button--text-upper button--size-s">CAMPUS</div></a>
+				
+						</div>	
+					</div>	
+				</div>		
+			</div>
+		</div>
+	</section>
+
+	<section class="cd-section">
+		<div>		
+			<div class="hero-top">							
+				<div class="container">	
+					<div class="twelve columns">
+						<h2>Instructorado</h2>	
+						 <p><span>Educación Emocional</span></p>
+						 <a href="about.html"><div class="button button--moema button--text-thick button--text-upper button--size-s">+info.</div></a>
+					</div>	
+				</div>		
+			</div>
+		</div>
+	</section>
+
+	<section class="cd-section">
+		<div>	
+			<div class="hero-top">							
+				<div class="container">	
+					<div class="twelve columns">
+						<h2>Materias</h2>	
+						 <p><span>su plan de estudio</span></p>
+						 <a href="blog.html"><div class="button button--moema button--text-thick button--text-upper button--size-s">+ info.</div></a>
+					</div>	
+				</div>		
+			</div>
+		</div>
+	</section>
+
+	<section class="cd-section">
+		<div>
+			<div class="hero-top">							
+				<div class="container">	
+					<div class="twelve columns">
+						<h2>Profesores</h2>	
+						 <p><span>Nustro equipo</span></p>
+						 <a href="profes.html"><div class="button button--moema button--text-thick button--text-upper button--size-s">Conozcalos</div></a>
+					</div>	
+				</div>		
+			</div>
+		</div>
+	</section>
+
+	<section class="cd-section">
+		<div>
+			<div class="hero-top">							
+				<div class="container">	
+					<div class="twelve columns">
+						<h2>contacto</h2>	
+						 <p><span>Hable con Nosotros</span></p>
+						 <a href="contact.html"><div class="button button--moema button--text-thick button--text-upper button--size-s">click aquí</div></a>
+					</div>	
+				</div>		
+			</div>
+		</div>
+	</section>
+
+	<nav>
+		<ul class="cd-vertical-nav">
+			<li><a href="#0" class="cd-prev inactive">Next</a></li>
+			<li><a href="#0" class="cd-next">Prev</a></li>
+		</ul>
+	</nav> <!-- .cd-vertical-nav -->
+		
+</main>
+		
+	<!-- JAVASCRIPT
+    ================================================== -->
+<script type="text/javascript" src="js/jquery-2.1.1.js"></script>	
+<script type="text/javascript" src="js/royal_preloader.min.js"></script>
+<script type="text/javascript">
+(function($) { "use strict";
+            Royal_Preloader.config({
+                mode:           'text', // 'number', "text" or "logo"
+                text:           'AELEM',
+                timeout:        0,
+                showInfo:       true,
+                opacity:        1,
+                background:     ['#FFFFFF']
+            });
+})(jQuery);
+</script>	
+<script type="text/javascript" src="js/retina-1.1.0.min.js"></script>
+<script type="text/javascript" src="js/jquery.easing.js"></script>	
+<script type="text/javascript" src="js/menu.js"></script>
+<script type="text/javascript" src="js/velocity.min.js"></script>
+<script type="text/javascript" src="js/velocity.ui.min.js"></script>
+<script type="text/javascript" src="js/jquery.fs.tipper.min.js"></script>	
+<script type="text/javascript" src="js/owl.carousel.min.js"></script>
+<script type="text/javascript" src="js/home-scroll.js"></script>	
+<script type="text/javascript" src="js/custom-home.js"></script>    
+<!-- End Document
+================================================== -->
+</body>
 </html>

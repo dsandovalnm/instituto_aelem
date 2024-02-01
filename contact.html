@@ -1,0 +1,235 @@
+﻿<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]>
+<!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+
+	<!-- Basic Page Needs
+  ================================================== -->
+	<meta charset="utf-8">
+	<title>AELEM</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<!-- Mobile Specific Metas
+  ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- Font
+  ================================================== -->
+	<link href='http://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+	
+	<!-- CSS
+  ================================================== -->
+	<link rel="stylesheet" href="css/base.css"/>
+	<link rel="stylesheet" href="css/skeleton.css"/>
+	<link rel="stylesheet" href="css/layout.css"/>
+	<link rel="stylesheet" href="css/font-awesome.css" />
+	<link rel="stylesheet" href="css/retina.css"/>
+	
+
+		
+	<!-- Favicons
+	================================================== -->
+	<link rel="shortcut icon" href="favicon.ico">
+	<link rel="apple-touch-icon" href="apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="apple-touch-icon-114x114.png">
+	
+	<script type="text/javascript" src="js/modernizr.custom.js"></script> 
+	
+	
+</head>
+<body class="royal_loader">	
+
+	<!-- Primary Page Layout
+	================================================== -->
+
+		
+	<!-- Nav and Logo
+	================================================== -->
+
+		<header class="cd-header">
+		
+			<div class="container">		
+				<div class="twelve columns">	
+					<div class="logo-wrap">
+						<img src="images/logo.png" alt="">
+					</div>
+					<a class="cd-primary-nav-trigger" href="#0">
+						<span class="cd-menu-text"></span><span class="cd-menu-icon"></span>
+					</a>
+				</div>	
+			</div>		
+				
+		</header>
+
+		<nav>
+			<div class="cd-primary-nav">
+				<ul class="cd-scndr-nav">
+					
+					<li class="cd-label"><a href="index.html" >inicio</a></li>
+					
+					<li class="cd-label"><a href="about.html">Instructorado</a></li>
+					
+					<li class="cd-label"><a href="blog.html">Materias</a></li>
+					
+					<li class="cd-label"><a href="profes.html">Profesores</a></li>
+					
+					<li class="cd-label"><a href="contact.html" class="curent-nav-color">Contacto</a></li>
+					
+					
+				</ul>	
+				
+				<div class="social-nav">
+					
+				</div>
+								
+			</div>
+		</nav>
+
+<main class="cd-main-content">
+
+	<div class="section">	
+		<div class="container header-big-text">		
+			<div class="twelve columns">	
+				<div class="title-page-text padding-top-bottom-title">
+					<h2>Envienos su consulta</h2>
+					<p>Un asesor le responderá lo antes posible</p>
+				</div>
+			</div>	
+		</div>
+	</div>
+	
+		<div class="clear"></div>
+			
+		<div class="section padding-bottom">
+			<div class="container">	
+					<form name="ajax-form" id="ajax-form" action="mail-it.php" method="post">
+						<div class="six columns">
+							<label for="name"> 
+								<span class="error" id="err-name">Ingrese su nombre</span>
+							</label>
+							<input name="name" id="name" type="text"   placeholder="Nombre *"/>
+						</div>
+						<div class="six columns">
+							<label for="email"> 
+								<span class="error" id="err-email">Ingrese su correo electrónico</span>
+								<span class="error" id="err-emailvld">Formato de correo no válido</span>
+							</label>
+							<input name="email" id="email" type="text"  placeholder="Correo Electrónico *"/>
+						</div>
+						<div class="twelve columns">
+							<label for="message"></label>
+							<textarea name="message" id="message" placeholder="su consulta"></textarea>
+						</div>
+						<div class="twelve columns">
+							<div id="button-con"><button class="send_message button button--moema button--text-thick button--text-upper button--size-s" id="send" data-lang="en">Enviar</button></div>					
+						</div>
+						<div class="clear"></div>	
+						<div class="error text-align-center" id="err-form">There was a problem validating the form please check!</div>
+						<div class="error text-align-center" id="err-timedout">The connection to the server timed out!</div>
+						<div class="error" id="err-state"></div>
+					</form>	
+						
+					<div class="clear"></div>
+					<div id="ajaxsuccess">Successfully sent!!</div>
+					<div class="clear"></div>	
+			</div>
+			<a target="_blank" href="https://api.whatsapp.com/send?phone=5493518090153&text=Buenos%20d%C3%ADas%2C%20estoy%20interesado%20en%20el%20instructorado%20de%20educaci%C3%B3n%20emocional">
+				<div class="button button--moema button--text-thick button--text-upper button--size-s">Whatsapp</div>
+			</a>
+			
+		</div>
+		<div class="clear"></div>		
+			
+		<div class="section padding-top-bottom-small black-background">
+			<div class="container">	
+				<div class="four columns">							
+					<div class="contact-block">																
+						<div class="text">				
+							<h6>Escríbanos:</h6>	
+							<p><span>&#xf095;</span>+54 9 351 809 0153</p>
+						</div>
+					</div>
+				</div>	
+				<div class="four columns">							
+					
+				</div>
+				<div class="four columns">							
+					<div class="contact-block">					
+						<div class="text">				
+							<h6>Email:</h6>
+							<p><span>&#xf0e0;</span> support@AELEM.com</p>
+						</div>
+					</div>
+				</div>	
+			</div>
+		</div>
+			
+		<div class="clear"></div>
+	
+			<div class="footer padding-top-small">				
+				<div class="container">				
+					<div class="twelve columns">
+						<img src="images/logo.png" alt="">	
+					</div>	
+					<div class="twelve columns">
+						<div class="social-footer">
+							<ul class="list-social-footer">
+								<li class="icon-footer tipped" data-title="twitter"  data-tipper-options='{"direction":"top","follow":"true"}'>
+									<a href="#">&#xf099;</a>
+								</li>
+								<li class="icon-footer tipped" data-title="github"  data-tipper-options='{"direction":"top","follow":"true"}'>
+									<a href="#">&#xf09b;</a>
+								</li>
+								<li class="icon-footer tipped" data-title="pinterest"  data-tipper-options='{"direction":"top","follow":"true"}'>
+									<a href="#">&#xf231;</a>
+								</li>
+								<li class="icon-footer tipped" data-title="facebook"  data-tipper-options='{"direction":"top","follow":"true"}'>
+									<a href="#">&#xf09a;</a>
+								</li>
+							</ul>	
+						</div>
+					</div>		
+					<div class="twelve columns">
+						<p>Copyright 2015 IG Design<br> 
+						all rights reserved</p> 
+					</div>
+				</div>
+			</div>
+
+</main>
+		
+	<!-- JAVASCRIPT
+    ================================================== -->
+<script type="text/javascript" src="js/jquery-2.1.1.js"></script>	
+<script type="text/javascript" src="js/royal_preloader.min.js"></script>
+<script type="text/javascript">
+(function($) { "use strict";
+            Royal_Preloader.config({
+                mode:           'text', // 'number', "text" or "logo"
+                text:           'AELEM',
+                timeout:        0,
+                showInfo:       true,
+                opacity:        1,
+                background:     ['#FFFFFF']
+            });
+})(jQuery);
+</script>	
+<script type="text/javascript" src="js/retina-1.1.0.min.js"></script>
+<script type="text/javascript" src="js/jquery.easing.js"></script>	
+<script type="text/javascript" src="js/menu.js"></script>
+<script type="text/javascript" src="js/jquery.fs.tipper.min.js"></script>
+<script type="text/javascript" src="js/contact.js"></script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAvpnlHRidMIU374bKM5-sx8ruc01OvDjI"></script>
+	<!-- ==================
+		Go to this link to activated your google map API KEY https://developers.google.com/maps/documentation/javascript/tutorial#api_key 
+		your key replace in script link for google map after .../maps/api/js?key=HERE_YOUR_API_KEY
+		coordinates for map you can change in custom-contact.js file 
+	================== -->	
+<script type="text/javascript" src="js/custom-contact.js"></script>    
+<!-- End Document
+================================================== -->
+</body>
+</html>
